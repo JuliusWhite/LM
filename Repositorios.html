@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Arch Linux</title>
+    <link rel="shortcut icon" href="./res/png-transparent-arch-linux-computer-icons-installation-linux-blue-angle-triangle-removebg-preview.png">
+    
+</head>
+
+<body>
+     
+    <header style="background: linear-gradient(to right, #2093d0 20%, white);">
+
+        <a href="https://archlinux.org/"><img src="./res/Arch_Linux_logo.svg.png" alt="Logo Arch Linux" align=right width="210" height="62"> </a>
+            
+                <font size="7" color="#4d4d4d">Arch Linux</font> <br>
+                <font size="3" color="#4d4d4d">Levente Polyak1​ & Team</font>
+
+    </header>
+
+    <nav class="menu">
+
+        <style>
+            .menu {
+                min-width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 40px;
+                margin-top: 5px;
+                margin-left: 5px;
+                padding: 0;
+            }
+            .menu div {
+                width: 170px;
+                height: 30px;
+                display: inline-block;
+                text-align:center;
+                padding: 10px 10px;
+                background-color: #2093d0;
+                color: white;
+                border: #125375 solid 1px;
+                border-collapse: collapse;
+            }
+            .menu div a {
+                display: block;
+                margin: 0px;
+                padding: 0px;
+            }
+        </style>
+
+        
+            <a href="Index.html"><div class="op"><b>Introducción a Arch Linux</b></div></a>
+            <a href="Historia.html"><div class="op"><b>Historia</b></div></a>
+            <a href="Instalacion.html"><div class="op"><b>Instalación de Arch Linux</b></div></a>
+            <a href="Repositorios.html"><div class="op"><b>Repositorios</b></div></a>
+            <a href="Versiones.html"><div class="op"><b>Versiones</b></div></a>
+            <a href="Distribuciones.html"><div class="op"><b>Distribuciones derivadas</b></div></a>
+            <a href="Conclusiones.html"><div class="op"><b>Conclusiones</b></div></a>
+        
+    </nav>
+
+
+    <section style="margin-left: 20px; margin-right: 20px;">
+
+    <font face="arial" align="justify">
+
+        <h1>
+            Repositorios
+        </h1>
+
+        <hr>
+
+        <p>
+            Como la gran mayoría de las distribuciones de Linux, Arch está basada principalmente en paquetes binarios. Estos paquetes están gestionados con pacman el cual se encarga de la instalación, actualización y desinstalación de dichos paquetes. <br>
+            El árbol de repositorios de Arch Linux consta de cuatro ramas diferentes:
+
+            <ul>
+                <li><b>Core</b>: Incluye los paquetes básicos para la istalación del sistema (kernel y herremientas mínimas).</li>
+                <li><b>Extra</b>: Son paquetes a mayores de una instalación básica, como el escritorio por ejemplo.</li>
+                <li><b>Testing</b>: Un repositorio especial donde se albergan paquetes elegibles para ser transferidos a core o extra.</li>
+                <li><b>Community</b>: Contienen los paquetes del AUR creados por la comunidad más votados.</li>
+            </ul>
+
+        </p>
+
+        <p>
+            Arch User Repository (AUR) es un repositorio promovido por los usuarios de la comunidad de Arch. Éste contiene descripciones de los paquetes (PKGBUILD) que permiten compilar un paquete desde el código fuente con makepkg y luego instalarlo a través de pacman. AUR nace para organizar y compartir paquetes nuevos de la comunidad y promover la inclusión de los paquetes más populares creados por los usuarios en el repositorio community.
+            Muchos de los paquetes nuevos que entran en los repositorios oficiales de Arch tienen su origen en AUR, donde los usuarios pueden aportar sus propias compilaciones de paquetes (PKGBUILD y los archivos relacionados). La comunidad de AUR  puede votar a favor o en contra de los paquetes subidos a AUR. Si un paquete llega a ser lo suficientemente puede ser introducido en el repositorio community (directamente accesible por pacman o abs).
+
+        </p>
+
+        <p>
+            Para instalar los paquetes tanto oficiales como los creados y subidos por la comunidad uno de los métodos más comunes y más sencillos es a través del software de control de versiones Git.
+        </p>
+
+        <p>
+            Antes que nada, para poder instalar paquetes AUR en Arch deberás instalar base-devel y git. Se puede hacer con el comando:
+            <p>
+                <font  size ="2" face="lucida console" color="white" style="background-color: black; border: black solid 5px">sudo pacman -S base-devel git</font>
+            </p>
+            
+            Después, lo primero que debes hacer es descargar el repositorio con git:
+            <p>
+                <font size ="2" face="lucida console" color="white" style="background-color: black; border: black solid 5px">git clone https://aur.archlinux.org/package_name.git</font>
+            </p> 
+            Posterior a esto debes situarte en la carpeta en cuestión y revisar el archivo PKGBUILD. Normalmente, este archivo contiene información sobre dependencias que debemos instalar previamente:
+            <p>
+                <font size ="2" face="lucida console" color="white" style="background-color: black; border: black solid 5px">cd package_name<br>less PKGBUILD</font> 
+            </p> 
+            
+            Una vez hecho, podemos ejecutar el siguiente comando con un usuario normal para resolver e instalar las dependencias requeridas con pacman e instalar el paquete:
+            <p>
+                <font size ="2" face="lucida console" color="white" style="background-color: black; border: black solid 5px">makepkg -si</font>
+            </p> 
+        </p>
+
+</font>
+
+</section>
+
+<footer style="background:linear-gradient(to bottom, #5bb6a7, #499286)">
+    <p align="center" s>
+        <font size="3" color="white">Julián Lago González</font> <br>
+        <font size="3" color="white">Curso: 2021/22</font> <br>
+        <font size="3" color="white">1º de desarrollo de aplicaciones multiplataforma</font> <br>
+        <a href="https://archlinux.org/"> <font size="3" color="white">https://archlinux.org/</font> </a> <br>
+        <SPAN title="https://www.instagram.com/archlinux/?hl=es"><a href="https://www.instagram.com/archlinux/?hl=es"> <img src="./res/png-transparent-logo-computer-icons-organization-color-business-instagram-miscellaneous-company-service-removebg-preview.png" 
+            alt="Logo Instagram" width="25" height="25"> </a> </SPAN> <br>
+    </p>
+    
+</footer>
+
+</body>
+</html>
